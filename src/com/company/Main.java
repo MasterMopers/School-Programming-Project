@@ -64,7 +64,8 @@ public class Main {
 
         }
 
-        //System.out.println(total_c);
+        //System.out.printl
+        //n(total_c);
         //System.out.println(total_d);
         //System.out.println(total_s);
 
