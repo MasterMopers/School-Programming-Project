@@ -34,69 +34,66 @@ public class Main {
             int amount = Integer.parseInt((myObj3.nextLine()));
             amount_array.add(amount);
 
-            System.out.println(id_array);
-            System.out.println(type_array);
-            System.out.println(amount_array);
-            System.out.println(amount_array.get(0));
+            //System.out.println(id_array);
+            //System.out.println(type_array);
+            //System.out.println(amount_array);
+            //System.out.println(amount_array.get(0));
         }
 
         //MANIPULATING STUDENT INFO
-        //Total number of S types
-        int total_s = 0;
-        for (int i = 0; i >= (-1); i++){
+        //Total number of S types, C types, D types
+        float total_s = 0;
+        float total_c = 0;
+        float total_d = 0;
+
+        for (int i = 0; i < type_array.toArray().length; i++){
             if (Objects.equals(type_array.get(i), "S")) {
-                total_s++;
-                System.out.println(type_array.get(i)); //why isnt it printing this shit
-                System.out.println(total_s);
+                total_s = total_s + amount_array.get(i);
+                //System.out.println(type_xarray.get(i));
+                //System.out.println(total_s);
 
             }
+            if (Objects.equals(type_array.get(i), "C")) {
+                total_c = total_c + amount_array.get(i);
+
+            }
+            if (Objects.equals(type_array.get(i), "D")) {
+                total_d = total_d + amount_array.get(i);
+
+            }
+
         }
 
-
-
-
-//        int total_s = 0;
-//        if ("S" == type_array.get(0)) {
-//            total_s++;
-//            //System.out.println(type_array.get(0));
-//            //System.out.println(total_s);
-
-//        }
-        //ArrayList<String> type_array = new ArrayList<String>();
-
-////        System.out.println(type_array.get(0));
-////        System.out.println("S");
-////
-////        System.out.println(Objects.equals(type_array.get(0), "S"));
-        //System.out.println(type_array[0] == "S"); //idkytf this doesnt work
+        //System.out.println(total_c);
+        //System.out.println(total_d);
         //System.out.println(total_s);
 
 
-        //Total number of C types
-
-        //Total number of D types
-
         //Total number of all types
+        float total_types = total_s + total_d + total_c;
 
         //Total revenue from S types
+        float total_rev_s = (total_s * 1);
 
         //Total revenue from C types
+        float total_rev_c = ((total_c * 3)/2); //this math operation is correct
 
         //Total revenue from D types
+        float total_rev_d = (total_d * 2);
 
         //Total revenue from all types
+        float total_rev = total_rev_c + total_rev_s + total_rev_d;
 
-
-//        //PRESENTING STUDENT INFO
-//        System.out.println("********************** End of Run Report **********************");
-//        System.out.println("Total number of Starbucks gift cards sold:" +);
-//        System.out.println("Total number of Chipotle gift cards sold:" +);
-//        System.out.println("Total number of Dos Coyotes gift cards sold:" +);
-//        System.out.println("Total number of all gift cards sold:" +);
-//        System.out.println("Total revenue from Starbucks gift cards:" +);
-//        System.out.println("Total revenue from Chipotle gift cards:" +);
-//        System.out.println("Total revenue from Dos Coyotes gift cards:" +);
-//        System.out.println("Total revenue raised:" +);
+        //PRESENTING STUDENT INFO
+        System.out.println("********************** End of Run Report **********************");
+        System.out.println("Total number of Starbucks gift cards sold: " + total_s);
+        System.out.println("Total number of Chipotle gift cards sold: " + total_c);
+        System.out.println("Total number of Dos Coyotes gift cards sold: " + total_d);
+        System.out.println("Total number of all gift cards sold: " + total_types);
+        System.out.println("Total revenue from Starbucks gift cards: " + total_rev_s);
+        System.out.println("Total revenue from Chipotle gift cards: " + total_rev_c);
+        System.out.println("Total revenue from Dos Coyotes gift cards: " + total_rev_d);
+        System.out.println("Total revenue raised: " + total_rev);
 
     }
 }
